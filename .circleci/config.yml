@@ -21,8 +21,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-#      - run: yarn test
-       - run:
+      - run:
           name: Install JUnit coverage reporter
           command: yarn add --dev jest-junit
       - run:
@@ -34,4 +33,4 @@ jobs:
       - store_test_results:
           path: ./junit
       - store_artifacts:
-          path: ./junit     
+          path: ./junit
